@@ -1,9 +1,10 @@
 cmake_minimum_required (VERSION 2.6)
 project (Base64 CXX)
 set (CMAKE_CXX_STANDARD 17)
+enable_testing()
 
 # Download and unpack googletest at configure time
-configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+configure_file(external/GoogleTest/CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/googletest-download )
