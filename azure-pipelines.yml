@@ -12,6 +12,6 @@ jobs:
   - task: CMake@1
     inputs:
       cmakeArgs: ..
-  -task: CMake@1
+  - task: CMake@1
     inputs:
       cmakeArgs: --build . --config Release
