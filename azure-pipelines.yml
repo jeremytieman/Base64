@@ -10,3 +10,4 @@ jobs:
     vmImage: windows-latest
   steps:
   - task: CMake@1
+    cmakeArgs: ..
