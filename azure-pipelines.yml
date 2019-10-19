@@ -3,5 +3,10 @@ trigger:
   - master
 pr:
   - master
-steps:
-- task: CMake@1
+jobs:
+- job: windows
+  displayName: Windows Build
+  pool:
+    vmImage: windows-latest
+  steps:
+  - task: CMake@1
