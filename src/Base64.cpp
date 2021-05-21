@@ -1,4 +1,4 @@
-#include "..\inc\Base64.h"
+#include "../inc/Base64.h"
 
 #include <sstream>
 #include <unordered_map>
