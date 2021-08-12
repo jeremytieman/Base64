@@ -1,6 +1,12 @@
-add_executable(Base64Test Main.cpp)
-target_link_libraries(Base64Test gtest_main Base64)
-target_include_directories(Base64Test PRIVATE ${CMAKE_SOURCE_DIR}/inc/)
-set_target_properties(Base64Test PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin/test/)
+find_package(GTest)
 
-add_test(NAME B64Test COMMAND Base64Test)
+if(NOT GTest_FOUND)
+  add_subdirectory(external)
+endif()
+
+add_executable(base64Test main.cpp)
+target_link_libraries(base64Test gtest_main base64)
+target_include_directories(base64Test PRIVATE ${CMAKE_SOURCE_DIR}/inc/)
+set_target_properties(base64Test PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin/test/)
+
+add_test(NAME b64Test COMMAND base64Test)
